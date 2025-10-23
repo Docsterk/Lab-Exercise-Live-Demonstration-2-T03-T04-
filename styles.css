@@ -1,0 +1,355 @@
+/* ================================
+   EnergyConserve - Stylesheet
+   Created by Prince Chikukwa
+   Updated with modern beige-gray theme
+   ================================ */
+
+/* ---------- COLOR PALETTE ---------- */
+:root {
+    --charcoal: #3c3c3c;
+    --warm-gray: #a89f91;
+    --soft-beige: #f2e7d5;
+    --light-beige: #f8f4ef;
+    --off-white: #fcfbf8;
+    --accent-gold: #d7a86e;
+    --accent-gray: #757575;
+    --white: #ffffff;
+    --text-dark: #2c2c2c;
+}
+
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-beige);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background-color: var(--charcoal);
+    padding: 1rem 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--off-white);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.nav-logo img {
+    height: 42px;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-link {
+    color: var(--off-white);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--warm-gray);
+    color: var(--white);
+}
+
+.nav-link.active {
+    background-color: var(--accent-gold);
+    color: var(--white);
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex: 1;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #f5e0a3 0%, #e4b565 50%, #c18c3e 100%);
+    color: #2f240f;
+    padding: 3rem;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    animation: slideFade 1.2s ease-out;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.hero:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.hero h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    color: #3a2b11;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #4a3b1d;
+    opacity: 0.95;
+}
+/* ---------- PAGE HEADER ---------- */
+.page-header {
+    background-color: var(--soft-beige);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-header h1 {
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- CARD GRIDS ---------- */
+.appliance-grid, .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.appliance-card, .metric-card {
+    background: var(--off-white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--accent-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appliance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.appliance-card h3 {
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+/* ---------- ENERGY TIPS ---------- */
+.energy-tips {
+    background: var(--off-white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--accent-gold);
+    margin: 2rem 0;
+}
+
+.energy-tips h2 {
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+/* ---------- CALCULATOR ---------- */
+.calculator {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+    border-top: 5px solid var(--accent-gold);
+    animation: fadeUp 0.8s ease-in;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--charcoal);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--accent-gray);
+    border-radius: 5px;
+    background-color: var(--light-beige);
+    color: var(--text-dark);
+}
+
+button {
+    background-color: var(--accent-gold);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--warm-gray);
+    transform: scale(1.03);
+}
+
+.result {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+    color: var(--charcoal);
+}
+
+/* ---------- TABLES ---------- */
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--off-white);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--charcoal);
+    color: var(--white);
+}
+
+tr:nth-child(even) {
+    background-color: var(--soft-beige);
+}
+
+/* ---------- ABOUT PAGE ---------- */
+.about-content {
+    background: var(--off-white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.about-content h2 {
+    color: var(--charcoal);
+    margin: 1.5rem 0 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: var(--charcoal);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    .appliance-grid, .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
